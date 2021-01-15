@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<!-- 设定页面使用的字符集 -->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!-- 用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出 -->
+	<meta http-equiv="pragma" content="no-cache"/>
+	<!-- 清除缓存 -->
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<!-- 设定网页的到期时间 -->
+	<meta http-equiv="expires" content="0"/>
+	
+	<!-- 
+	<script type="text/javascript" src="<%=request.getContextPath()%>/res/jquery/jquery.min.js"></script>
+	 -->
+	<script type="text/javascript" src="./vue/vue.global.js"></script>
+	<script type="text/javascript" src="./vue/axios.min.js"></script>
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./vant/lib/index.css"/>
+    <!-- 引入组件库 -->
+    <script src="./vant/lib/vant.min.js"></script>
+    <!-- <script type="text/javascript" src="./resultPage.js"></script> -->
+	<style type="text/css">
+		body {
+			margin-left: 0px;
+			margin-top: 0px;
+			margin-right: 0px;
+			margin-bottom: 0px;
+			overflow:hidden;
+		}
+		.STYLE3 {color: #528311; font-size: 12px; }
+		.STYLE4 {
+			color: #42870a;
+			font-size: 12px;
+		}
+		.red_error {
+			color:#FF0000;
+			padding-right:3px;
+		}
+	</style>
+	
+	<!-- 具体操作脚本 -->
+	<script type="text/javascript">
+   	</script>
+	
+</head>
+	
+<body>
+	<div id="app">
+
+		  <van-grid :column-num="3">
+			<van-grid-item v-for="item in gridData" :key="item.userId" :icon="item.icon" :text="item.text" @click="aa(item.id)"/>
+		  </van-grid>
+
+		
+		  <van-grid>
+			<van-grid-item icon="icon" text="text"></van-grid-item>
+			<van-grid-item icon="icon" text="text"></van-grid-item>
+			<van-grid-item icon="icon" text="text"></van-grid-item>
+		  </van-grid>
+		  <van-grid>
+			<van-grid-item icon="icon" text="text" />
+			<van-grid-item icon="icon" text="text" />
+			<van-grid-item icon="icon" text="text" />
+		  </van-grid>
+		  
+     
+    </div>
+</body>
+<script>
+const main_app = {
+	setup() {
+		gridData =Vue.reactive([
+			{
+			id: 1,
+			icon: "aim",
+			text: "照相机"
+			},
+			{
+			id: 2,
+			icon : "bulb-o",
+			text: "手电筒"
+			},
+			{
+			id: 3,
+			icon: "ellipsis",
+			text: "WiFi热点"
+			},
+			{
+			id: 4,
+			icon: "qr-invalid",
+			text: "指纹识别"
+			},
+			{
+			id: 5,
+			icon: "discount",
+			text: "设备信息"
+			}
+		])
+		function aa(id){
+		    console.log(id)
+			// window.xaele.jsCallAndroid(id)
+		}
+
+		return{
+			gridData,aa
+		}
+	}
+};
+const app = Vue.createApp(main_app).use(vant);
+
+// 加载模板信息
+// functionName(app);
+
+app.mount('#app');
+
+</script>
+</html>

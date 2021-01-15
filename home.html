@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!-- 设定页面使用的字符集 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!-- 用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出 -->
+    <meta http-equiv="pragma" content="no-cache"/>
+    <!-- 清除缓存 -->
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <!-- 设定网页的到期时间 -->
+    <meta http-equiv="expires" content="0"/>
+
+    <script src="./vue/vue.global.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./vant/lib/index.css">
+    <!-- 引入组件库 -->
+    <script src="./vant/lib/vant.min.js"></script>
+    <style>
+
+        
+
+        .hh{
+            background-image: url("2.png");
+            height: 100vh;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app" class="hh">
+
+    <van-row style="height: 4vh;padding-top: 4vh;">
+        <van-col span="11" offset="1" style="font-size: 3vh;color: white;">云控矿山管理系统</van-col>
+        <van-col span="2" offset="10" style="padding-top: 1vh;"><van-image src="./3.png"></van-image></van-col>
+    </van-row>
+
+
+    <van-row style="height: 15vh;">
+        <van-col span="4" offset="1" style="padding-top: 4vh;"><van-image src="./4.png"></van-image></van-col>
+        <van-col span="8" style="padding-top: 4.5vh;font-size: 2vh;color: white;">
+            <van-row>小明</van-row>
+            <van-row>通风科 - 瓦检员</van-row>
+        </van-col>
+    </van-row>
+
+   
+    <van-row style="height: 15vh;background-color:white;margin: 3vh;">
+        <van-col span="8">span: 8</van-col>
+        <van-col span="8">span: 8</van-col>
+        <van-col span="8">span: 8</van-col>
+      </van-row>
+
+    
+    
+</div>
+</body>
+<script>
+const main_app = {
+    setup() {
+
+        // state = Vue.reactive({
+        //     username: '',
+        //     password: ''
+        // })
+
+
+		
+		// function onSubmit (values) {
+		//     console.log('submit',values);
+		// }
+
+		// return{
+		// 	state,onSubmit
+		// }
+	}
+};
+const app = Vue.createApp(main_app).use(vant);
+app.mount('#app');
+</script>
+</html>
